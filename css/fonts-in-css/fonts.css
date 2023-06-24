@@ -1,0 +1,16 @@
+h2 {
+    border-bottom: 1px solid red;
+}
+p {
+    border-top: 1px solid green;
+    font-family: 'Roboto', Verdana, Geneva, Tahoma, sans-serif ;
+    /* 1px = 1/96th of inch */
+    font-size: 15px;
+    line-height: 20px;
+}
+
+span {
+    font-weight: bold;
+    font-style: oblique;
+    color:aqua;
+}
