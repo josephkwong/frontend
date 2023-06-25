@@ -1,0 +1,30 @@
+.product {
+    height: 300px;
+    width: 250px;
+    background-color: aquamarine;
+    border: 2px groove brown;
+    /* border-width: 2px;
+    border-style: groove;
+    border-color: brown; */
+    border-radius: 10px;
+}
+
+#productThree {
+    height: 300px;
+    width: 250px;
+    background-color: aquamarine;
+    border-bottom: 2px groove brown;
+    border-right: 4px groove greenyellow;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#productFour {
+    color:aliceblue;
+    height: 600px;
+    width: 600px;
+    border: 2px groove brown;
+    background-repeat: no-repeat;
+    background-position: top right ;
+    background-image: url(https://images.unsplash.com/photo-1687141572261-4679156f5b0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80);
+}
