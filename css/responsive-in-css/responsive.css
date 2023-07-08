@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+/* Class */
+.container {
+    font-size: 10px;
+    border: 3px solid blue;
+    width: 300px;
+    /* height: 612px; */
+    height: 100vh; /* x% height of the device display */
+    width: 100vw; /* x% width of the device display */
+}
+
+/* Id */
+#one {
+    /* font-size: 2em; em = 2 * font size of immediate Class parent = 2 x 10 = 20px */
+    /* padding: 3em; em = 3 * font size of this element after em  = 3 x 20px = 60px */
+}
+
+#two {
+    /* font-size: 3rem; calculates based on root initial element 3rem= 3 x 20(html) = 60px */
+    /* padding: 2rem; calculates based on root initial element 3rem= 2 x 20(html) = 40px */
+}
