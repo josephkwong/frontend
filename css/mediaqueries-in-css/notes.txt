@@ -1,0 +1,6 @@
+Media types in CSS:
+-> Media queries helps to make our website responsive (adjust any device)
+-> On various browser width, we can change/inject our css style of different elements
+
+Media Queries for Standard Devices
+https://css-tricks.com/snippets/css/media-queries-for-standard-devices/

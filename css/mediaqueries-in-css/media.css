@@ -1,0 +1,53 @@
+/* class */
+.item {
+    background-color: aquamarine;
+    color: black;
+    text-align: center;
+    font-size: 65px;
+    display: none;
+}
+
+/* Responsive */
+/* 0px to below 300px width applys below rules for Wearables */
+@media only screen and (max-device-width: 218px) {
+
+    #item-1 {
+        display: block;
+    }
+
+    #item-2 {
+        display: block;
+        background-color: aqua;
+    }
+
+}
+
+/* 375px to below 812px width applys below rules for iPhone X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 812px) {
+
+    #item-2 {
+        display: block;
+        background-color: palevioletred;
+    }
+
+}
+
+/* 768px to below 1024px width applys below rules for iPad 1-2-Mini-Air */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    #item-3 {
+        display: block;
+        background-color: yellowgreen;
+    }
+
+}
+
+/* 1200px and 1600px width applys below rules for Laptops */
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+
+    #item-4 {
+        display: block;
+        background-color: gold;
+    }
+
+}
