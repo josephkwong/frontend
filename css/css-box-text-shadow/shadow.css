@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    padding: 25px 12px;
+    margin: 25px 12px;
+    background-color: aquamarine;
+}
+
+/* y-axis x-axis blurr-radius color
+.card-bottom { 
+    box-shadow: 6px 6px 10px skyblue;
+} */
+
+.card-bottom { /* offset-y-axis offset-x-axis blurr-radius color */
+    /* shadow on bottom outside */
+    /* box-shadow: 6px 6px 10px skyblue; */
+
+    /* shadow on bottom inside */
+    /* box-shadow: inset 6px 6px 10px skyblue; */
+    box-shadow: inset -60px -60px 10px skyblue;
+}
+
+.card-top { /* y-axis x-axis blurr-radius spread-radius color */
+    /* rgba (,0.4) = how deep the color should be, higher number going deeper */
+    box-shadow: -6px -7px 5px 5px rgba(70, 170, 170, 0.4);
+    /* two colors shadow */
+    box-shadow: 15px 10px blue, 20px 25px orange;
+
+}
+
+.card h2 {
+
+    /* y-axis x-axis blurr-radius spread-radius color */
+    text-shadow: 5px 5px 1px rgb(197, 191, 191);  /* shadow below shifting right direction of the text */
+    text-shadow: -5px -5px 1px rgb(197, 191, 191);  /* shadow above top shifting left direction of the text */
+
+}
