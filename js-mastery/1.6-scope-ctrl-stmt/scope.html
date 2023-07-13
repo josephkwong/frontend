@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope in JS</title>
+</head>
+<body>
+    <h2>Scope of vaiables in JS</h2>
+    <script>
+        // If we declare vaiable directly inside Script tag, it takes global scope
+        var name = "Peter";
+        var name = "Wonderland";  // variable re-declaration with Var keyword does not give an error
+
+        {
+            var name2 = "Jane"  // this will take local scope of the function
+            console.log(name);
+        }
+        console.log("Your name " + name);
+        // console.log(name2);  // this will give an error being nae2 has scope only within function
+
+        let output = "Hello";
+        // let output = "Hello2";  // will give an error being let will not allow redeclaration
+        {
+            let output = "New Hello";  // but let will allow redeclaration inside a function
+            console.log("Inside function - let " + output);
+        }
+        console.log("Outside function - let " + output);
+
+        const finalVal = "This cannot be modified, as its a constant";
+        // finalVal = "I am changing the value of const finaVal so it will give an error";
+        console.log(finalVal);
+    </script>
+</body>
+</html>
