@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array in JS</title>
+</head>
+<body>
+    <h2>Arrays in JS</h2>
+
+    <script>
+        // Array can keep more than one similar or non-similar items
+        let ageArray = [23, 34, 56, 31];  // array of similar items
+        let namesArray = ["John", "Peter", "Jane"];
+        let salariesArray = [5687.34, 16868.32, 2868.10];
+        let randomArray = [12, "Peter", 4954.99];
+
+        console.log(randomArray);
+        console.log(salariesArray);
+        // console.log(typeof(salariesArray));
+        console.log(salariesArray.length);
+
+        salariesArray = salariesArray.sort();
+        console.log("*** Salaries after sorting - ");
+        console.log(salariesArray);
+        
+        salariesArray.push(88888.88); // adds new item at end of array
+        console.log("after add new item at the end of array using .push - ");
+        console.log(salariesArray);
+
+        console.log(salariesArray.splice(salariesArray.length - 1, 1));  // remove the last item
+        console.log("after the last item removed -");
+        console.log(salariesArray);
+
+        console.log("*** Salaries after addition -"); 
+        // remove the 2 items from index 0 and then adds 777 and 888 in their place
+        console.log(salariesArray.splice(0, 2, 777, 888));  // index, no. of items to be removed or added
+        console.log(salariesArray);
+
+        console.log("*** Salaries after deletion -"); 
+        console.log(salariesArray.splice(0, 2));  // index, no. of items to be removed or added
+
+        console.log("after the deletion .splice(0,2)");
+        console.log(salariesArray);
+   
+        console.log(randomArray[2]);  // gives item at 2nd index
+        console.log(randomArray[3]);  // gives item at 3rd index, i.e. undefined
+    
+        let deptArray = new Array("Phy", "Chem", "Maths"); 
+        console.log(deptArray);
+        console.log(typeof(deptArray));  // Array is JS is of type object
+
+        let student1 = {
+            name: "Peter",
+            rollNo: 567,
+            age: 23
+        };
+
+        let student2 = {
+            name: "Jane",
+            rollNo: 123,
+            age: 18
+        };
+
+        let students = [student1, student2];  // array of objects
+        console.log(students);
+
+    </script>
+</body>
+</html>
