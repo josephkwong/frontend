@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JS</title>
+</head>
+<body>
+    <h2>Function in JS</h2>
+    <ul>
+        <li>Function helps us avoid repeating code over and over again</li>
+        <li>Function is a place of reusable code that will written once and used as many times as you want</li>
+        <li>Function starts with function keyword and has a name</li>
+        <li>Function can take parameter or they can be of no parameter</li>
+        <li>Function may of / many not have a return type</li>
+        <li>Code inside a function only gets executed when it is called</li>
+    </ul>
+    <script>
+        // definition of a function
+        // 1. function with no parameter
+        function addNumbers() {
+            console.log(5+7);
+        }
+        addNumbers(); // calling a function
+
+        // 2. function with parameters (num1, num2) and no a return type
+        function addTwoNumbers(num1, num2) {
+            let result = num1 + num2;
+            console.log(result);  // this function does not return anything to the callers
+        }
+        addTwoNumbers(3, 4);  // calling a function with parameters
+
+        // 3. function with parameters (num1, num2) and have a return type
+        function addTwoNumbersAndReturn(num1, num2) {
+            // debugger;
+            let result = num1 + num2;
+            return result;  // this function returns the output to the caller
+            console.log("this will not execute as it is written after return statement");  // this function does not get executed being the function has alreadly returned the control
+        }
+        let output = addTwoNumbersAndReturn(99, 1);  // calling a function with parameters and accepting the return value
+        console.log("the output, which is called function return is " + output);
+
+        // 4. function default value of parameter is only to be used if the value for that parameter is not passed by the caller
+        function add2NumWithReturnAndDefaultValue(num1, num2 = 5) {
+            return num1+num2;
+        }
+        let outputDV = add2NumWithReturnAndDefaultValue(22, 33);
+        console.log(outputDV);  // 22 + 33 = 55  // num2 value is passed so the Function default value will not to be used
+
+        outputDV = add2NumWithReturnAndDefaultValue(22);  // as num2 value is not passed so it will take the Function default value as 5
+        console.log(outputDV);  // 22 + 5 (default value) = 27
+    </script>
+</body>
+</html>
