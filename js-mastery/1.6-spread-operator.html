@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 spread operator</title>
+</head>
+<body>
+    <h2>ES6 spread operator</h2>
+
+    <script>
+        let numArray1 = [11, 22, 33];
+        let numArr2 = [99, 1, 44];
+
+        const newArray = [...numArray1, ...numArr2];
+        console.log(newArray);  // spread opertor joins arrays or add new items to existing array
+
+        const newArr2 = [...numArray1, 66, 33];
+        console.log(newArr2);
+    </script>
+</body>
+</html>
