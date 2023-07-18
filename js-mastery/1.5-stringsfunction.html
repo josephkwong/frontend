@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String functions</title>
+</head>
+<body>
+    <h3>String functions</h3>
+
+    <script>
+        var line = "JJ is a good boy";
+        console.log(line.length);
+
+        console.log(line.indexOf("oo"));  // finds the first occurance of the item
+        console.log(line.lastIndexOf("o"));  // finds the last occurance of the item
+
+        console.log(line.slice(3, 5)); // output = is - the last index not covered, allows negative index starting from index 3
+        console.log(line.substring(3, 5));  // output = is - the last index not covered
+        console.log(line.substr(3, 6));  // output = is a - the second parameter is length, starting from index 3
+
+        console.log(line.toLocaleUpperCase());
+        console.log(line.toLocaleLowerCase());
+
+        var data = "   Today is a good day to     outside   ";
+        console.log(data);
+        console.log(data.trim());  // remove leading and trailing spaces
+
+        console.log(line);
+        var result = line.replace("JJ", "Hollywood");  // does not change the original string
+        console.log(result);
+        console.log(line);
+
+        console.log(line.charAt(3));  // 3rd index, which the output is 'i'
+        console.log(line[4]);  // 4th index, which the output is 's'
+        console.log(line.charCodeAt(3));  // 3rd index item in UTF code presentation as 105
+    </script>
+</body>
+</html>
