@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event and Event Listener in JS</title>
+</head>
+<body id="bodyElement">
+    <button onclick="magic()">Magic</button>
+    <div id="header" class="layout">
+        <h2 id="headerText" onmouseover="changeColor()" onmouseout="changeColor()">Header section</h2>
+        <input type="text" id="headerTextInput" placeholder="Header text" />
+        <button id="headerBtn" onclick="changeText()">Change text</button>
+    </div>
+    <div id="main" class="layout">
+        <section id="left">
+            <ul class="left-menu">
+                <li>Products</li>
+                <li>Categories</li>
+                <li>Orders</li>
+            </ul>
+        </section>
+        <section id="center">
+            <h3 id="someText">Hello world</h3>
+            <input type="text" id="fullName" placeholder="Full Name" />
+        </section>
+        <section id="right">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero dolorum cum corporis repellat numquam.</p>
+        </section>
+    </div>
+    <div id="footer" class="layout">
+        @All rights reserved.
+    </div>
+
+    <script>
+
+        function magic() {
+            let body = document.getElementById('bodyElement');
+            // debugger;
+
+            if (body.style.backgroundColor !== 'skyblue') {
+                body.style.backgroundColor = 'skyblue';
+            } else {
+                body.style.backgroundColor = '#ffffff';
+            }
+        }
+
+        let fN = document.getElementById('fullName');
+        fN.addEventListener('change', function test() {
+            // alert(fN.value);
+            document.getElementById('someText').innerText = fN.value;
+        });
+
+
+        function changeColor() {
+            // alert("Hello");
+            let hT = document.getElementById("headerText");
+            if (hT.style.color !== 'blue') {
+                hT.style.color = "blue";    
+            } else {
+                hT.style.color = "black";
+            }
+            
+        }
+
+        function changeText() {
+            let hT = document.getElementById('headerText');
+            let hTi = document.getElementById('headerTextInput');
+            hT.innerText = hTi.value;
+            hT.style.fontSize = '50px';
+            hTi.value = '';
+        }
+
+    </script>
+</body>
+</html>
