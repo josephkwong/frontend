@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time in JS</title>
+</head>
+<body>
+    <h2>Date and Time in JS</h2>
+    <div id="dateTime"></div>
+    <div id="formattedDate"></div>
+    <script>
+        setInterval(function test() {
+            let currentDateTIme = new Date();
+            // console.log(currentDateTIme);
+            document.querySelector("#dateTime").innerHTML = currentDateTIme;
+        }, 1000);
+
+        let date1 = new Date(0);
+        console.log(date1);
+
+        date1 = new Date(5000);  // Time elapsed in ms from Jan 01 1970 08:00:00 GMT+0800
+        console.log(date1);  // Jan 01 1970 08:00:05 GMT+0800
+
+        // let date2 = new Date(year, month, day, hour, minutes, seconds, milliseconds);
+        // Wed Nov 04 2099 09:45:22 GMT+0800 
+        let date3 = new Date(2099, 10, 4, 9, 45, 22, 88);  // month starts from 0 to 11
+        console.log(date3);
+
+        let startTime = Date.now();
+
+        console.log(date3.getFullYear()); // 2099
+        console.log(date3.getMonth());  // 10, where it is 0 to 11
+        console.log(date3.getDate()); // 4, where it is the actual date, here is 4th of that month
+        console.log(date3.getDay());  // 3 = Day of the week, which is Wednesday
+        console.log(date3.getHours());
+        console.log(date3.getSeconds());
+        console.log(date3.getMilliseconds());
+
+        let formattedDate = `Date is ${date3.getDate()}/${date3.getMonth() + 1}/${date3.getFullYear()}`;
+        document.querySelector('#formattedDate').innerHTML = formattedDate;
+
+        // UTC - Universal time - London
+        let date4 = new Date();
+        console.log(date4.getHours());  // Your local hours
+        console.log(date4.getUTCHours());  // current hours in London
+
+        console.log(date4);
+        date4.setDate(38);  // Replace 38 to the Day part of date. If over end Day of that month, the remainder number shall be the Day of next month
+        console.log(date4);
+
+        let endTime = Date.now();
+        console.log("Time taken to execute the code in ms is: " + (endTime - startTime));
+
+        let timeElapsedInMs = Date.now();
+        console.log(timeElapsedInMs);  // milliseconds passed until now from the date of Jan 01 1970 08:00:00
+    </script>
+</body>
+</html>
