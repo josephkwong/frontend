@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow functions(ES6)</title>
+</head>
+<body>
+    <h2>Arrow function is a shortcut way of writing the normal JS function in ES6</h2>
+
+    <script>
+        const add3 = (num1, num2) => num1 + num2;
+        result = add3(11, 4);
+        console.log(result);
+
+        const sqFunction = a => a * a;  // Only work without () if there is one parameter function
+        console.log(sqFunction(5));
+
+        const sayHello = () => console.log("Hello world!");
+        sayHello();
+
+        // Different format comes in the same result
+        setInterval(function test(){
+            console.log("function test(): After 2 secs")
+        }, 2000);
+        setInterval(function(){console.log("function(): After 2 secs")}, 2000);
+        setInterval(()=>{console.log("{console.log()} After 2 secs")}, 2000);
+        setInterval(()=>console.log("console.log() After 2 secs"), 2000);
+    </script>
+</body>
+</html>
