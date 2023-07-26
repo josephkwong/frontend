@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math object in JS</title>
+</head>
+<body>
+    <h2>Math object in JS</h2>
+
+    <script>
+        let mathObj = Math;
+        console.log(mathObj);
+        console.log("Value of PI is " + Math.PI);
+
+        console.log("Rounding " + Math.round(24.88));  // 25
+        console.log("Exponential power 5 to the power of 3 " + Math.pow(5, 3));  // 125
+        console.log("Square root of 144 is " + Math.sqrt(144));  //  12
+
+        console.log("Ceil " + Math.ceil(22.8));  // 23
+        console.log("Floor " + Math.floor(22.8));  // 22
+
+        console.log("ABS " + Math.abs(-6));  // 6
+
+        console.log("Sin(pi) is " + Math.sin(Math.PI));  // 1.2246467991473532e-16
+        console.log("Sin(pi)/2 is " + Math.sin(Math.PI/2));  // 1
+        console.log("Cos(pi) is " + Math.cos(Math.PI/2));  // 1
+        console.log("Tan(pi) is " + Math.tan(Math.PI/2));  // 1
+
+        console.log("Max number is " + Math.max(21, 2, 45, 67));  // 67
+        console.log("Min number is " + Math.min(21, 2, 45, 67));  // 2
+
+        let randomNo = Math.random();  // gives a random number between 0 and 1
+        console.log("randomNo " + randomNo);  // 0.06553909468726005
+
+        function randomIntFormInterval(min, max) {  // min and max included
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+
+        const rndInt = randomIntFormInterval(1, 200);
+        console.log("rndInt: " + rndInt);  // 192 , where randomly changing
+    </script>
+</body>
+</html>
