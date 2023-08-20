@@ -60,6 +60,19 @@ var getNumber2 = randomNum;
 addTwoNums(getNumber1(), getNumber1());
 addTwoNums(getNumber1(), getNumber2());
 
+// Another example of high-order function
+const withLog = (fn) => {
+    return (...args) => {
+        console.log(`calling $(fn.name)`);
+    };
+};
+
+const add = (aHo, bHo) => aHo + bHo;
+const addWithLogging = withLog(add);
+addWithLogging(3, 4);
+// calling add
+// 7
+
 
 // Pure-functions
 // returns the exact same result as long as it's given the same values

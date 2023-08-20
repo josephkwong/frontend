@@ -20,6 +20,7 @@ var user = "Joseph";
 console.log(user);
 
 
+
 // in ES6 - Block scope
 /* // Two seperate variables with the same name
 let color = 'red';  // Global scope
