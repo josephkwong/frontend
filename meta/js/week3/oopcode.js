@@ -81,3 +81,71 @@ var baldEagle = new Eaglec();
 var kindPenguin = new Penguinc();
 baldEagle.useWings();  // "Flying! Barely flapping!"
 kindPenguin.useWings();  // "Diving"
+
+// creating classes
+class Book {
+    constructor(title, author, isInStock) {
+        this.title = title;
+        this.author = author;
+        this.isInStock = isInStock;
+    }
+
+    // method 1 = function 1
+    toggleIsInStock() {
+        this.isInStock = !this.isInStock
+    }
+
+    // mthod 2 = function 2
+    getPrototype() {
+        console.log(Object.getPrototypeOf(this))  // Return the prototype of an object
+    }
+}
+
+const book1 = new Book('The Lord of Rings', 'JRR Tolkien', false);
+const book2 = new Book('The Hobbit', 'JRR Tolkien', true);
+console.log(book1);  // false
+/*
+book1.toggleIsInStock();  // executed, where false -> true
+*/
+book1.getPrototype();  // Book {} but you can see in browser as {constructor: f, toggleIsInStock: f, getPrototype: f}
+
+// extends
+class RareBook extends Book {
+    constructor(title, author, isInStock, location, isVerified) {
+        super(title, author, isInStock)
+        this.location = location;
+        this.isVerified = isVerified;        
+    }
+
+    // method 1 
+    getLocation() {
+        console.log(this.location);
+    }
+
+    // method 2
+    toggleIsVerified() {
+        this.isVerified = !this.isVerified;
+        if (this.isVerified) {
+            console.log(`${this.title} has been verified by an independent expert.`)
+        } else {
+            console.log(`${this.title} has not been verified by an independent expert.`)
+        }
+    }
+    toggleIsInStock() {
+        super.toggleIsInStock();
+        if (this.isInStock) {
+            console.log(`${this.title} is in stock.`)
+        } else {
+            console.log(`${this.title} is not in stock.`)
+        }        
+    }
+}
+
+const book3 = new RareBook('Romeo and Juliet', 'William Shakespeare', true, 'London', true);
+console.log(book3);
+book3.getLocation();  // London
+book3.toggleIsVerified(); // ... has not been verified ...
+
+const book4 = new RareBook('Romeo and Juliet', 'William Shakespeare', true, 'London', false);
+book4.toggleIsVerified();  // ... has been verified ...
+book4.toggleIsInStock();  // ... is not in stock ...
