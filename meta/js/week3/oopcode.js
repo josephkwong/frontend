@@ -149,3 +149,62 @@ book3.toggleIsVerified(); // ... has not been verified ...
 const book4 = new RareBook('Romeo and Juliet', 'William Shakespeare', true, 'London', false);
 book4.toggleIsVerified();  // ... has been verified ...
 book4.toggleIsInStock();  // ... is not in stock ...
+
+// Default parameters
+// case 1
+function confirmPurchase(name = 'guest user', purchaseCount = 1) {  //default parameter
+    console.log('Thank you for your order ' + name + '. You have made ' + purchaseCount + ' purchases from us.')
+}
+
+confirmPurchase('Tom', 7);
+// confirmPurchase();  // before the default parameters added ...undefined...undefined... 
+confirmPurchase();
+
+// case 2
+function convertCurrency(amount = 1, rate = 1.07) {
+/*
+  1. Give the 'amount' parameter a default of 1.
+  2. Give the 'rate' parameter a default of 1.07.
+  3. Test the function.
+*/
+    console.log(amount * rate);
+}
+
+convertCurrency();
+
+
+// Designing OO Program
+class AnimalDesign {
+    constructor(color, energy, isActive, sleep) {
+        this.color = color;
+        this.energy = energy;
+        this.isActive = isActive;
+        this.sleep = sleep;
+        console.log(this);
+    }
+
+    // isActive
+    toggleIsActive() {
+        if (this.isActive) {
+            if (this.energy > 0) {
+                this.energy -=20,
+                console.log(this.energy)
+            } else {
+                if (this.energy <= 0) {
+                    toggleSleep()
+                }
+            }
+        }
+    }
+
+    toggleSleep() {
+        this.energy +=20;
+        console.log(this.energy);
+    }
+    
+}
+
+class CatDesign extends AnimalDesign {  // 'extends' is useed to setup inheritance relationships
+
+
+}
