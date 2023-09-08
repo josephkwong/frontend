@@ -1,2 +1,2 @@
-# my-fist-repo minor update!
+# my-fist-repo
 Practice account for learning git
