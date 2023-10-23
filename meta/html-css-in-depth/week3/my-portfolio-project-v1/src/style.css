@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Gotham Book";
+    src: url("../public/GothamBook.ttf");
+}
+
+* {
+    font-family: "Gotham Book", sans-serif;
+}
+
+body {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: auto;
+}
+
+header > img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    flex: 1;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+footer div {
+    flex: 1;
+}
+
+h1 {
+    display: block;
+    font-size: 56px;
+    font-weight:bold;
+    height: 50px;
+    margin-block-start: 48px;
+    margin-block-end: 48px;
+    text-transform: uppercase;
+    padding-left: 96px;
+    color: rgb(236, 144, 24);
+}
+
+h2 {
+    display: block;
+    font-size: 24px;
+    font-weight:bold;
+    text-align: center;
+    height: 50px;
+    margin-top: 24px;
+    padding-top: 72px;
+    text-transform: uppercase;
+}
+
+p {
+    display: block;
+    margin-block-start: 24px;
+    margin-block-end: 24px;
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    width: 600px;
+}
+
+.logo {
+    margin: 0 auto;
+}
+
+.sale .description {
+    font-size: 24px;
+    line-height: 36px;
+    color:coral;
+    padding-bottom: 48px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
+
+.shop .description {
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    padding-top: 72px;
+    padding-bottom: 48px;
+    padding-left: 96px;
+    padding-right: 96px;
+}
