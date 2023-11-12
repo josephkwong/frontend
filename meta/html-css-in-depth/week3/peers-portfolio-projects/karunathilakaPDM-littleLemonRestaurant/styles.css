@@ -1,0 +1,133 @@
+/* Reset default margin and padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color */
+body {
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Styles */
+header {
+    background-color: #ffcc00;
+    text-align: center;
+}
+
+.logo {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width:240px;
+}
+
+#nav {
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 20px;
+}
+
+#nav ul {
+    list-style-type: none;
+}
+
+#nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+/* Banner Styles */
+#banner {
+    background-image: url('banner.jpg'); /* Replace with your banner image */
+    background-size: cover;
+    
+}
+
+/* Shop Description */
+#shop-description {
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+    
+}
+
+/* Menu Table Styles */
+#menu {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 60%;
+    
+}
+
+th, td {
+    padding: 10px;
+}
+
+tr {
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 2px solid black;
+}
+
+th {
+    font-size: 20px;
+    padding: 20px 50px;
+}
+
+td {
+    padding: 10px 30px;
+}
+
+/* New Arrivals Section */
+#new-arrivals {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 220px;
+    height: 400px;
+    text-align: center;
+}
+
+/* About Us Section */
+#about-us {
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+#footer-logo {
+    padding-left: 30px;
+}
+
+#contact-details {
+    text-align: right;
+    display: flex !important;
+    align-content: space-around !important;
+    flex-wrap: wrap !important;
+} 
