@@ -16,12 +16,70 @@ import { useReducer } from 'react';
 import Fruits from "./components/Fruits";
 import FruitsCounter from "./components/FruitsCounter";
 
-// React State Management
+// Week 3 - Navbar
+import Homepage from "./Homepage";
+import AboutMe from "./components/AboutMe";
+import ContactUs from './components/ContactUs';
+import { Routes, Route, Link } from 'react-router-dom';
+
+// Week 3 - Using embedded assets
+import rooftops from './assets/images/central-park.jpg';
+
+// Week3 - Media packages (npm install react-player first)
+import ReactPlayer from 'react-player';
+
+// Week 3 - Media packages
+const MyVideo = () => {
+  return (
+    <ReactPlayer url='https://www.youtube.com/watch?v=jx5hdo50a2M' />
+  );
+};
+
+// Week 2 - React State Management
 const reducer = (state, action) => {
   if (action.type === 'ride') return {money: state.money + 10};
   if (action.type === 'fuel') return {money: state.money -50};
   return new Error();
 }
+
+// Week 3 - conditional components
+function LoginOutButton(props) {
+  if (props.isLoggedIn) {
+    return <LogoutButton />
+  } else {
+    return <LoginButton />
+  }
+}
+
+function LoginButton() {
+  return <button>Log In</button>
+}
+
+function LogoutButton() {
+  return <button>Log Out</button>
+}
+
+// Week 3 - conditional rendering
+function MovitationalMessage(props) {
+  const weekday = (props.mday >= 1 && props.mday <=5);
+  const weekend = (props.mday >= 6 && props.mday <=7);
+  let message;
+
+  if (props.holiday) {
+    message = "Do whatever you want!";
+  } else if (weekday) {
+    message = "Get it done.";
+  } else if (weekend) {
+    message = "Have some rest!!";
+  } else {
+    message = "Something has gone wrong :(";
+  }
+
+  return (
+    <div>{message}</div>
+  )
+}
+
 
 // Prop drilling - child -> parent -> sibling
 // -Original coding - BusinessCard component
@@ -136,7 +194,7 @@ const SocialMediaPost = props => {
   )
 }
 
-const Link = props => 
+const UrlLink = props => 
   <div>
     <a href={props.url}>{props.url}</a>
   </div>
@@ -148,6 +206,7 @@ const styles = {
   fontSize: "80px",
   backgroundColor: "blue"
 }
+
 function Promo(props) {
   return (
     <div>
@@ -181,7 +240,61 @@ function BlogEntry() {
 }
 
 function App() {
-  const articleOrigin = "The Daily Code";
+
+  // week-3 lab -song selection
+  const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  )
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  )
+
+  function toggle1() {
+    if (bird1.paused) {
+      bird1.play();
+    } else {
+      bird1.pause();
+    }
+  };
+
+  function toggle2() {
+    if (bird2.paused) {
+      bird2.play();
+    } else {
+      bird2.pause()
+    }
+  };
+
+  // week-3 creating an video/audio component
+  const vidUrl = 'https://www.facebook.com/facebook/videos/10153231379946729';
+
+  // week-3 using embedded assets
+  const randomImageUrl = "https://picsum.photos/400/265"
+  
+  // week-3 single view conditional update
+  const svtime = new Date();
+  const svday = svtime.toLocaleString("en-us", { weekday: "long"});
+  const svmorning = svtime.getHours() >= 6 && svtime.getHours() <= 12;
+  let svdayMessage;
+
+  if (svday.toLowerCase() === "monday") {
+    svdayMessage = `Happy ${svday}`;
+  } else if (svday.toLowerCase() === "tuesday") {
+    svdayMessage = `${svday}, four days to go`;
+  } else if (svday.toLowerCase() === "wednesday") {
+    svdayMessage = `${svday}, half way there`;
+  } else if (svday.toLowerCase() === "thursday") {
+    svdayMessage = `${svday}, start planning the weekend`;
+  } else if (svday.toLowerCase() === "friday") {
+    svdayMessage = `Woo - hoo, the weekend is coming!`;
+  } else {
+    svdayMessage = "Stay calm and keep having fun";
+  }
+
+  // week-3 conditional rendering
+  // if 'enabled' variable has a expression value, the message will display.
+  let enabled = "true";
 
   // Managing state in React - Life the state up
   const [fruits] = React.useState([
@@ -191,13 +304,70 @@ function App() {
       {fruitName: 'orange', id: 4},
   ]);
 
-
   // React State Management
   const initialState = {money: 100};
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  return (
+  // Expression as props
+  const articleOrigin = "The Daily Code";
+
+  return (    
     <div className="App">
+      {/* week-3 lab -song selection */}
+      <div>
+        <button onClick={toggle1} style={{marginRight: "10px"}}>Caspian Tern 1</button>
+        <button onClick={toggle2}>Caspian Tern 2</button>
+      </div>
+
+      {/* week-3 -create an audio / video component */}
+      <div>
+        <h1>React Player example</h1>
+        <ReactPlayer 
+          url={vidUrl}
+          playing={false}
+          volume={0.5}
+        />
+      </div>
+
+      {/* week-3 media packages (first $ npm install react-player) */}
+      <div>
+        <MyVideo />
+      </div>
+
+      {/* week-3 using embedded assets */}
+      <div>
+        <h1>
+          Task: add three images with some styling.
+        </h1>
+        <img height={200} style={{marginRight: "10px"}} src={rooftops} alt='A rooftop in New York using the import statement' />
+        <img height={200} style={{marginRight: "20px"}} src={require("./assets/images/central-park.jpg")} alt='a central park using require function' />
+        <img height={200} src={randomImageUrl} alt='a park providing a url' />
+      </div>
+    
+      {/* week-3 single view conditional update */}
+      <h1>{svdayMessage}</h1>
+      {svmorning ? <h2>Have you had breakfast yet?</h2> : ''}
+
+      {/* week-3 conditional components */}
+      <LoginOutButton isLoggedIn={true} />
+
+      {/* week-3 conditional rendering */}
+      <div>
+        {enabled && 
+          <MovitationalMessage mday={new Date().getDay()} holiday={false} />}
+      </div>
+
+      {/* week-3 navbar (install React Router lib first $ npm -i react-router-dom@6) */}
+      <nav className='nav'>
+        <Link to="/" className="nav-item" style={{marginRight: "10px"}}>Home</Link>
+        <Link to="/about-me" className="nav-item" style={{marginRight: "10px"}}>About Little Lemon</Link>
+        <Link to="/contact-us" className="nav-item">Contact Us</Link>
+      </nav>
+      <Routes>
+        <Route index element={<Homepage />} />
+        <Route path="about-me" element={<AboutMe />} />
+        <Route path="contact-us" element={<ContactUs />} />
+      </Routes>
 
       {/* Managing state in React */}
       <h1>Where should the state go? (Life-up state)</h1>
@@ -261,7 +431,7 @@ function App() {
         title="Day 100 of Learning React"
         author="JW Kwong"
         text="I can't believe it's only benn 100 days since I started learning React" />
-      <Link url="www.google.com" />
+      <UrlLink url="www.google.com" />
 
       {/* Use CSS style rules from an external file and add it to a component as an internal style */}
       <Sidebar sidebarContent="Sidebar content here..." />
